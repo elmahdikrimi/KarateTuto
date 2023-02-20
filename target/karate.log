@@ -1,0 +1,241 @@
+16:49:12.885 [com.intuit.karate.cli.Main.main()] INFO  com.intuit.karate - Karate version: 1.3.1
+16:49:13.069 [com.intuit.karate.cli.Main.main()] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+16:49:13.767 [com.intuit.karate.cli.Main.main()] INFO  com.intuit.karate - karate.env system property was: null 
+16:49:13.778 [com.intuit.karate.cli.Main.main()] INFO  com.intuit.karate - >> lock acquired, begin callSingle: classpath:..feature
+16:49:13.800 [com.intuit.karate.cli.Main.main()] ERROR com.intuit.karate - src/test/java/ConduitApp/feature/getToken.feature:4
+* url 'https://restful-booker.herokuapp.com/'
+>> src/test/java/ConduitApp/feature/getToken.feature:7
+>> karate-config.js failed
+>> not found: ..feature
+js failed:
+>>>>
+01: function fn() {
+02:   var env = karate.env; // get system property 'karate.env'
+03:   karate.log('karate.env system property was:', env);
+04:   if (!env) {
+05:     env = 'dev';
+06:   }
+07:   var config = {
+08:     apiUrl: 'https://api.realworld.io/api/',
+09:   }
+10:   if (env == 'dev') {
+11: config.name="waa"
+12: config.job="api tester"
+13:   } else if (env == 'QA') {
+14:     config.userName = "mehdi"
+15:     config.passWord = "mehdi123"
+16:   }
+17: 
+18:   var access2 = karate.callSingle('classpath:..feature',config).access2
+19:   karate.configure('headers',{Authorization: access2})
+20:   //setting the access token by calling the feature and passing object config
+21:   var accessToken = karate.callSingle('classpath:Helpers/CreateToken.feature',config).authToken
+22:   karate.configure('headers',{Authorization: 'Token '+ accessToken})
+23: 
+24:   karate.configure('retry',{count:10, interval: 5000})
+25:   return config;
+26: }
+27: 
+<<<<
+org.graalvm.polyglot.PolyglotException: not found: ..feature
+- com.intuit.karate.resource.ResourceUtils.getResource(ResourceUtils.java:126)
+- com.intuit.karate.core.ScenarioFileReader.toResource(ScenarioFileReader.java:129)
+- com.intuit.karate.core.ScenarioFileReader.readFile(ScenarioFileReader.java:64)
+- com.intuit.karate.core.ScenarioBridge.read(ScenarioBridge.java:718)
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:226)
+- <js>.fn(Unnamed:18)
+
+src/test/java/ConduitApp/feature/getToken.feature:4
+16:49:13.816 [com.intuit.karate.cli.Main.main()] ERROR com.intuit.karate - src/test/java/ConduitApp/feature/getToken.feature:8
+Given path 'auth'
+>> src/test/java/ConduitApp/feature/getToken.feature:7
+>> karate-config.js failed
+>> not found: ..feature
+js failed:
+>>>>
+01: function fn() {
+02:   var env = karate.env; // get system property 'karate.env'
+03:   karate.log('karate.env system property was:', env);
+04:   if (!env) {
+05:     env = 'dev';
+06:   }
+07:   var config = {
+08:     apiUrl: 'https://api.realworld.io/api/',
+09:   }
+10:   if (env == 'dev') {
+11: config.name="waa"
+12: config.job="api tester"
+13:   } else if (env == 'QA') {
+14:     config.userName = "mehdi"
+15:     config.passWord = "mehdi123"
+16:   }
+17: 
+18:   var access2 = karate.callSingle('classpath:..feature',config).access2
+19:   karate.configure('headers',{Authorization: access2})
+20:   //setting the access token by calling the feature and passing object config
+21:   var accessToken = karate.callSingle('classpath:Helpers/CreateToken.feature',config).authToken
+22:   karate.configure('headers',{Authorization: 'Token '+ accessToken})
+23: 
+24:   karate.configure('retry',{count:10, interval: 5000})
+25:   return config;
+26: }
+27: 
+<<<<
+org.graalvm.polyglot.PolyglotException: not found: ..feature
+- com.intuit.karate.resource.ResourceUtils.getResource(ResourceUtils.java:126)
+- com.intuit.karate.core.ScenarioFileReader.toResource(ScenarioFileReader.java:129)
+- com.intuit.karate.core.ScenarioFileReader.readFile(ScenarioFileReader.java:64)
+- com.intuit.karate.core.ScenarioBridge.read(ScenarioBridge.java:718)
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:226)
+- <js>.fn(Unnamed:18)
+
+src/test/java/ConduitApp/feature/getToken.feature:4
+src/test/java/ConduitApp/feature/getToken.feature:8
+16:49:13.822 [com.intuit.karate.cli.Main.main()] ERROR com.intuit.karate - src/test/java/ConduitApp/feature/getToken.feature:9
+And request
+"""
+{
+"username" : "admin",
+"password" : "password123"
+    }
+"""
+>> src/test/java/ConduitApp/feature/getToken.feature:7
+>> karate-config.js failed
+>> not found: ..feature
+js failed:
+>>>>
+01: function fn() {
+02:   var env = karate.env; // get system property 'karate.env'
+03:   karate.log('karate.env system property was:', env);
+04:   if (!env) {
+05:     env = 'dev';
+06:   }
+07:   var config = {
+08:     apiUrl: 'https://api.realworld.io/api/',
+09:   }
+10:   if (env == 'dev') {
+11: config.name="waa"
+12: config.job="api tester"
+13:   } else if (env == 'QA') {
+14:     config.userName = "mehdi"
+15:     config.passWord = "mehdi123"
+16:   }
+17: 
+18:   var access2 = karate.callSingle('classpath:..feature',config).access2
+19:   karate.configure('headers',{Authorization: access2})
+20:   //setting the access token by calling the feature and passing object config
+21:   var accessToken = karate.callSingle('classpath:Helpers/CreateToken.feature',config).authToken
+22:   karate.configure('headers',{Authorization: 'Token '+ accessToken})
+23: 
+24:   karate.configure('retry',{count:10, interval: 5000})
+25:   return config;
+26: }
+27: 
+<<<<
+org.graalvm.polyglot.PolyglotException: not found: ..feature
+- com.intuit.karate.resource.ResourceUtils.getResource(ResourceUtils.java:126)
+- com.intuit.karate.core.ScenarioFileReader.toResource(ScenarioFileReader.java:129)
+- com.intuit.karate.core.ScenarioFileReader.readFile(ScenarioFileReader.java:64)
+- com.intuit.karate.core.ScenarioBridge.read(ScenarioBridge.java:718)
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:226)
+- <js>.fn(Unnamed:18)
+
+src/test/java/ConduitApp/feature/getToken.feature:4
+src/test/java/ConduitApp/feature/getToken.feature:8
+src/test/java/ConduitApp/feature/getToken.feature:9
+16:49:13.827 [com.intuit.karate.cli.Main.main()] ERROR com.intuit.karate - src/test/java/ConduitApp/feature/getToken.feature:16
+When method POST
+>> src/test/java/ConduitApp/feature/getToken.feature:7
+>> karate-config.js failed
+>> not found: ..feature
+js failed:
+>>>>
+01: function fn() {
+02:   var env = karate.env; // get system property 'karate.env'
+03:   karate.log('karate.env system property was:', env);
+04:   if (!env) {
+05:     env = 'dev';
+06:   }
+07:   var config = {
+08:     apiUrl: 'https://api.realworld.io/api/',
+09:   }
+10:   if (env == 'dev') {
+11: config.name="waa"
+12: config.job="api tester"
+13:   } else if (env == 'QA') {
+14:     config.userName = "mehdi"
+15:     config.passWord = "mehdi123"
+16:   }
+17: 
+18:   var access2 = karate.callSingle('classpath:..feature',config).access2
+19:   karate.configure('headers',{Authorization: access2})
+20:   //setting the access token by calling the feature and passing object config
+21:   var accessToken = karate.callSingle('classpath:Helpers/CreateToken.feature',config).authToken
+22:   karate.configure('headers',{Authorization: 'Token '+ accessToken})
+23: 
+24:   karate.configure('retry',{count:10, interval: 5000})
+25:   return config;
+26: }
+27: 
+<<<<
+org.graalvm.polyglot.PolyglotException: not found: ..feature
+- com.intuit.karate.resource.ResourceUtils.getResource(ResourceUtils.java:126)
+- com.intuit.karate.core.ScenarioFileReader.toResource(ScenarioFileReader.java:129)
+- com.intuit.karate.core.ScenarioFileReader.readFile(ScenarioFileReader.java:64)
+- com.intuit.karate.core.ScenarioBridge.read(ScenarioBridge.java:718)
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:226)
+- <js>.fn(Unnamed:18)
+
+src/test/java/ConduitApp/feature/getToken.feature:4
+src/test/java/ConduitApp/feature/getToken.feature:8
+src/test/java/ConduitApp/feature/getToken.feature:9
+src/test/java/ConduitApp/feature/getToken.feature:16
+16:49:13.831 [com.intuit.karate.cli.Main.main()] ERROR com.intuit.karate - src/test/java/ConduitApp/feature/getToken.feature:17
+Then status 200
+>> src/test/java/ConduitApp/feature/getToken.feature:7
+>> karate-config.js failed
+>> not found: ..feature
+js failed:
+>>>>
+01: function fn() {
+02:   var env = karate.env; // get system property 'karate.env'
+03:   karate.log('karate.env system property was:', env);
+04:   if (!env) {
+05:     env = 'dev';
+06:   }
+07:   var config = {
+08:     apiUrl: 'https://api.realworld.io/api/',
+09:   }
+10:   if (env == 'dev') {
+11: config.name="waa"
+12: config.job="api tester"
+13:   } else if (env == 'QA') {
+14:     config.userName = "mehdi"
+15:     config.passWord = "mehdi123"
+16:   }
+17: 
+18:   var access2 = karate.callSingle('classpath:..feature',config).access2
+19:   karate.configure('headers',{Authorization: access2})
+20:   //setting the access token by calling the feature and passing object config
+21:   var accessToken = karate.callSingle('classpath:Helpers/CreateToken.feature',config).authToken
+22:   karate.configure('headers',{Authorization: 'Token '+ accessToken})
+23: 
+24:   karate.configure('retry',{count:10, interval: 5000})
+25:   return config;
+26: }
+27: 
+<<<<
+org.graalvm.polyglot.PolyglotException: not found: ..feature
+- com.intuit.karate.resource.ResourceUtils.getResource(ResourceUtils.java:126)
+- com.intuit.karate.core.ScenarioFileReader.toResource(ScenarioFileReader.java:129)
+- com.intuit.karate.core.ScenarioFileReader.readFile(ScenarioFileReader.java:64)
+- com.intuit.karate.core.ScenarioBridge.read(ScenarioBridge.java:718)
+- com.intuit.karate.core.ScenarioBridge.callSingle(ScenarioBridge.java:226)
+- <js>.fn(Unnamed:18)
+
+src/test/java/ConduitApp/feature/getToken.feature:4
+src/test/java/ConduitApp/feature/getToken.feature:8
+src/test/java/ConduitApp/feature/getToken.feature:9
+src/test/java/ConduitApp/feature/getToken.feature:16
+src/test/java/ConduitApp/feature/getToken.feature:17
+16:49:14.389 [com.intuit.karate.cli.Main.main()] INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 1 (0 remaining) src/test/java/ConduitApp/feature/getToken.feature
